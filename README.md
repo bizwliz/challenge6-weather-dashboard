@@ -31,11 +31,10 @@ I learned how to grab an API's information to use in my website and reflect the 
 
 ## Usage
 
-Link to website: https://bizwliz.github.io/challenge5-dayplanner/
+Link to website: https://bizwliz.github.io/challenge6-weather-dashboard/
 
-<img width="500px" height="300px" src="./assets/video/screenshot.png">
-<video width="500px" height="300px" controls="controls">
-<source src="./assets/video/video_of_website.mp4" type="video/mp4" /></source></video>
+<img src="./assets/images/website.png">
+
 
 ---
 
