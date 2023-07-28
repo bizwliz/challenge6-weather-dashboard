@@ -21,6 +21,7 @@ function displayWeather(cityName){
     })
     .then(function(currentData){
         console.log(currentData)
+        titleEl.innerHTML=currentData.name+dayjs.unix(currentData.dt).format("(MM/DD/YYYY)")
     })
 
     var forecastUrl="https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+apiKey+"&units=imperial"
