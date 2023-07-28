@@ -5,6 +5,7 @@ var windEl=document.getElementById("wind")
 var humidityEl=document.getElementById("humidity")
 var searchBtn=document.getElementById("search-btn")
 var cityInput=document.getElementById("city-input")
+var fivedayforecastEl=document.getElementById("fiveday-forecast")
 
 function searchCity(){
     var cityName=cityInput.value
@@ -21,7 +22,7 @@ function displayWeather(cityName){
     })
     .then(function(currentData){
         console.log(currentData)
-        titleEl.innerHTML=currentData.name+dayjs.unix(currentData.dt).format("(MM/DD/YYYY)")
+        titleEl.innerHTML=currentData.name+dayjs.unix(currentData.dt).format("(MM/DD/YYYY)")+"<img src='https://openweathermap.org/img/wn/"+currentData.weather[0].icon+"@2x.png'>"
     })
 
     var forecastUrl="https://api.openweathermap.org/data/2.5/forecast?q="+cityName+"&appid="+apiKey+"&units=imperial"
@@ -33,8 +34,11 @@ function displayWeather(cityName){
     .then(function(forecastData){
         console.log(forecastData)
         var forecastArr=forecastData.list
+        fivedayforecastEl.textContent=""
        for (let i = 3; i < forecastArr.length; i=i+8){
         console.log(forecastArr[i])
+        var cardTitle=document.getElementById("card-title"+j)
+        cardTitle.textContent=dayjs.unix(forecastArr[i].dt).format("(MM/DD/YYYY)")
        }
     })
 }
